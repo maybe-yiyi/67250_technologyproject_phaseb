@@ -27,3 +27,7 @@ nav a {
 nav a:hover {
   border-color: #4d5c3b;
 }
+
+#navselected {
+  color: #92ad70;
+}
