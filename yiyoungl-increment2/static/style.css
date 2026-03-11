@@ -45,3 +45,14 @@ footer {
   text-align: center;
   color: rgba(245,245,247,.72);
 }
+
+th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  width: fit-content;
+}
+
+table tr:nth-child(even) td {
+  background-color: #c2c2c2;
+  color: #000000;
+}
