@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="Yiyoung Liu">
+        <meta name="keywords" content="Museum, Carnegie Mellon University,
+                                       Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js" defer></script>
+    </head>
+    <body onload="addYear()">
+        <header>
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+                <a href="tickets.html">Buy Tickets</a>
+                <a id="navselected" href="checkout.html">Checkout</a>
+            </nav>
+        </header>
+        <div class="main">
+            <form>
+                <label for="name">Name: (required)</label><br>
+                <input type="text" id="name" name="name"><br><br>
+                <label for="email">Email: (required)</label><br>
+                <input type="email" id="email" name="email"><br><br>
+                <label for="tickets">Ticket Quantity: (required)</label><br>
+                <input type="number" id="tickets" name="tickets"><br><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <footer>
+            <p id="copyYear"> MonoMuse. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
