@@ -56,3 +56,8 @@ table tr:nth-child(even) td {
   background-color: #c2c2c2;
   color: #000000;
 }
+
+form * {
+  margin: auto;
+  text-align: center;
+}
