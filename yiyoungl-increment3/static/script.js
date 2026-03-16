@@ -52,5 +52,8 @@ function greeting(x) {
     }
     document.getElementById("greeting").innerHTML = str + document.getElementById("greeting").innerHTML;
 }
-
 greeting(hour);
+
+function addYear() {
+    document.getElementById("copyYear").innerHTML = "&copy; " + now.getFullYear() + document.getElementById("copyYear").innerHTML;
+}

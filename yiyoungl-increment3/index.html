@@ -12,7 +12,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
         <script src="./static/script.js" defer></script>
     </head>
-    <body>
+    <body onload="addYear()">
         <header>
             <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
             <nav>
@@ -43,7 +43,7 @@
             <a href="views/tickets.html">Buy Tickets</a>
         </div>
         <footer>
-            <p>&copy; 2026 MonoMuse. All Rights Reserved.</p>
+            <p id="copyYear"> MonoMuse. All Rights Reserved.</p>
         </footer>
     </body>
 </html>
