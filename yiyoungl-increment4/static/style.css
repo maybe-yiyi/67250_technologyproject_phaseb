@@ -6,8 +6,16 @@
   font-weight: 100;
   line-height: 1.5;
   font-style: normal;
-  background: #0b0b0c;
-  color: #f5f5f7;
+  background: #35356A;
+  color: #FFFFFF;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #191931;
 }
 
 #logo {
@@ -15,16 +23,28 @@
   display: block;
 }
 
-nav a {
+header a {
   text-decoration: none;
-  color: #f5f5f7;
+  color: #000000;
   font-weight: 400;
   padding: 8px 10px;
   border: 1px solid transparent;
-  border-radius: 12px;
+  border-radius: 15px;
+  background: #A9A9FF;
 }
 
-nav a:hover {
+nav {
+  display: flex;
+  flex-direciton: row;
+  justify-content: space-between;
+  gap: 10px 30px;
+}
+
+.big-button {
+  padding: 16px 20px;
+}
+
+header a:hover {
   border-color: #4d5c3b;
 }
 
@@ -35,7 +55,7 @@ nav a:hover {
 body {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
+  /* min-height: 100vh; */
 }
 
 footer {
