@@ -123,12 +123,313 @@ footer {
 
 /* Buy Tickets page */
 .buytickets-layout {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 48px;
   padding: 32px 24px;
   background: transparent;
-  max-width: 960px;
+  max-width: 1100px;
+  align-items: start;
+}
+
+@media (max-width: 720px) {
+  .buytickets-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Museum hours list */
+.hours-info {
+  margin-top: 32px;
+  background: transparent;
+}
+
+.hours-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.hours-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  font-size: 0.88rem;
+  background: transparent;
+  padding: 8px 12px;
+  border-bottom: 1px solid rgba(169, 169, 255, 0.12);
+}
+
+.hours-day {
+  color: rgba(255,255,255,0.75);
+  background: transparent;
+}
+
+.hours-time {
+  color: #A9A9FF;
+  font-weight: 400;
+  background: transparent;
+}
+
+/* Checkout form section */
+.checkout-form-section {
+  background: rgba(25, 25, 49, 0.7);
+  border: 1px solid rgba(169, 169, 255, 0.25);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.checkout-form-section.hidden {
+  display: none;
+}
+
+/* Screen-reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+  background: transparent;
+}
+
+/* Price display */
+.price-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(126, 126, 252, 0.1);
+  border: 1px solid rgba(126, 126, 252, 0.3);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.price-label {
+  font-size: 0.9rem;
+  color: rgba(255,255,255,0.7);
+  background: transparent;
+}
+
+.price-amount {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #A9A9FF;
+  background: transparent;
+}
+
+/* Error messages */
+.error-msg {
+  font-size: 0.82rem;
+  color: #ff8a8a;
+  background: transparent;
+  display: none;
+  margin-top: 2px;
+}
+
+.error-msg.visible {
+  display: block;
+}
+
+/* Field hint */
+.field-hint {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  background: transparent;
+  margin-top: 2px;
+}
+
+/* Required star and optional label */
+.required-star {
+  color: #ff8a8a;
+  background: transparent;
+  margin-left: 2px;
+}
+
+.optional-label {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  background: transparent;
+  font-weight: 300;
+  margin-left: 4px;
+}
+
+.required-note {
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.4);
+  background: transparent;
+  margin: 0;
+}
+
+/* Checkbox group */
+.checkbox-group {
+  flex-direction: row !important;
+  align-items: center;
+  gap: 10px !important;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(169,169,255,0.3);
+  border-radius: 4px;
+  accent-color: #7E7EFC;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.checkbox-group label {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.75);
+  background: transparent;
+  cursor: pointer;
+}
+
+/* Place Order button */
+.place-order-btn {
+  width: 100%;
+  padding: 14px 20px;
+  font-size: 1rem;
+  margin-top: 4px;
+}
+
+/* Confirmation page */
+.confirmation-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 48px 24px;
+  max-width: 600px;
+  margin: 0 auto;
+  background: transparent;
+  gap: 20px;
+}
+
+.confirmation-icon {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(80, 200, 120, 0.15);
+  border: 2px solid rgba(80, 200, 120, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  color: #7be0a0;
+  flex-shrink: 0;
+}
+
+.confirmation-heading {
+  font-size: 32pt;
+  font-weight: 300;
+  background: transparent;
+  margin: 0;
+}
+
+.confirmation-subtext {
+  color: rgba(255,255,255,0.65);
+  font-size: 0.95rem;
+  background: transparent;
+  margin: 0;
+}
+
+.confirmation-card {
+  background: rgba(25, 25, 49, 0.7);
+  border: 1px solid rgba(169, 169, 255, 0.25);
+  border-radius: 12px;
+  padding: 28px;
+  width: 100%;
+  text-align: left;
+}
+
+.confirmation-card-heading {
+  font-size: 16pt;
+  font-weight: 400;
+  background: transparent;
+  margin-bottom: 20px;
+  color: #A9A9FF;
+}
+
+.confirmation-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  background: transparent;
+  margin: 0;
+}
+
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(169,169,255,0.12);
+  background: transparent;
+}
+
+.detail-row:last-child {
+  border-bottom: none;
+}
+
+.detail-row dt {
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.55);
+  background: transparent;
+  font-weight: 400;
+}
+
+.detail-row dd {
+  font-size: 0.9rem;
+  color: #fff;
+  background: transparent;
+  text-align: right;
+  margin: 0;
+}
+
+.detail-total dt,
+.detail-total dd {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #A9A9FF;
+  background: transparent;
+}
+
+.confirmation-note {
+  font-size: 0.83rem;
+  color: rgba(255,255,255,0.45);
+  background: transparent;
+  margin: 0;
+  line-height: 1.6;
+}
+
+.back-home-btn {
+  display: inline-block;
+  background: #7E7EFC;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 28px;
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 400;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  margin-top: 8px;
+}
+
+.back-home-btn:hover {
+  background: #A9A9FF;
 }
 
 .section-subtitle {
@@ -402,6 +703,102 @@ footer {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.65);
   background: transparent;
+}
+
+/* Quantity input inside table */
+.qty-cell {
+  white-space: nowrap;
+  background: transparent;
+}
+
+.qty-input {
+  width: 64px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(169, 169, 255, 0.3);
+  border-radius: 6px;
+  padding: 6px 8px;
+  color: #fff;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+.qty-input:focus {
+  border-color: #7E7EFC;
+  outline: 2px solid #A9A9FF;
+}
+
+.subtotal-cell {
+  color: #A9A9FF;
+  font-size: 0.95rem;
+  font-weight: 400;
+  white-space: nowrap;
+  background: transparent;
+}
+
+/* Grand total row */
+.total-row td {
+  background: #191931;
+  padding: 14px 16px;
+  border-top: 2px solid rgba(169, 169, 255, 0.25);
+}
+
+.total-label {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.65);
+  background: #191931;
+}
+
+.total-amount {
+  font-size: 1.1rem;
+  font-weight: 400;
+  color: #A9A9FF;
+  background: #191931;
+  white-space: nowrap;
+}
+
+/* Proceed to checkout button row */
+.proceed-btn-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 16px;
+  margin-top: 14px;
+  background: transparent;
+}
+
+.proceed-btn {
+  font-size: 0.88rem;
+  padding: 10px 20px;
+}
+
+.qty-note {
+  font-size: 0.82rem;
+  color: #ff8a8a;
+  background: transparent;
+}
+
+/* Confirmation breakdown list */
+.breakdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.breakdown-list li {
+  font-size: 0.88rem;
+  color: rgba(255,255,255,0.85);
+  background: transparent;
+}
+
+.detail-breakdown-row {
+  align-items: flex-start;
 }
 
 /* Checkout form */

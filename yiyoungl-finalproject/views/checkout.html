@@ -2,11 +2,10 @@
 <html lang="en">
     <head>
         <meta name="author" content="Yiyoung Liu">
-        <meta name="keywords" content="Museum, Carnegie Mellon University,
-                                       Information Systems">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
         <meta name="description" content="MonoMuse website redesign project">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>MonoMuse</title>
+        <title>Buy Tickets — MonoMuse</title>
         <link rel="stylesheet" href="../static/style.css">
         <script src="../static/script.js" defer></script>
     </head>
@@ -19,163 +18,130 @@
                 <a href="explore.html">Explore</a>
                 <a href="exhibitions.html">Exhibitions</a>
             </nav>
-            <a href="checkout.html" class="big-button">Buy Tickets</a>
+            <a href="checkout.html" class="big-button" aria-current="page">Buy Tickets</a>
         </header>
         <div id="main-content" role="main" class="main">
             <div class="buytickets-layout">
+
                 <section class="pricing-section">
                     <h1 class="checkout-heading">Buy Tickets</h1>
-                    <p class="section-subtitle">Select a date below to begin your purchase.</p>
-                    <table class="ticket-table">
+                    <p class="section-subtitle">Enter quantities below, then proceed to checkout to select your visit date.</p>
+                    <table class="ticket-table" aria-label="Ticket types and pricing">
                         <thead>
                             <tr>
-                                <th>Type</th>
-                                <th>Price</th>
-                                <th>Details</th>
+                                <th scope="col">Type</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Details</th>
+                                <th scope="col">Qty</th>
+                                <th scope="col">Subtotal</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td><span class="ticket-type">General</span></td>
-                                <td><span class="ticket-price">$25</span></td>
-                                <td class="ticket-details">Standard access for adults (ages 18–64)</td>
+                                <td><span class="ticket-price">$18</span></td>
+                                <td class="ticket-details">Standard access for all visitors</td>
+                                <td class="qty-cell">
+                                    <input type="number" class="qty-input" id="qty-general" min="0" max="10" value="0" aria-label="General ticket quantity">
+                                </td>
+                                <td class="subtotal-cell" id="sub-general">$0</td>
                             </tr>
                             <tr>
                                 <td><span class="ticket-type">Student</span></td>
                                 <td><span class="ticket-price">$10</span></td>
-                                <td class="ticket-details">Student ID required</td>
+                                <td class="ticket-details">Valid student ID required at entry</td>
+                                <td class="qty-cell">
+                                    <input type="number" class="qty-input" id="qty-student" min="0" max="10" value="0" aria-label="Student ticket quantity">
+                                </td>
+                                <td class="subtotal-cell" id="sub-student">$0</td>
                             </tr>
                             <tr>
                                 <td><span class="ticket-type">Member</span></td>
                                 <td><span class="ticket-price">$14</span></td>
-                                <td class="ticket-details">Member ID required</td>
+                                <td class="ticket-details">Member ID required at entry</td>
+                                <td class="qty-cell">
+                                    <input type="number" class="qty-input" id="qty-member" min="0" max="10" value="0" aria-label="Member ticket quantity">
+                                </td>
+                                <td class="subtotal-cell" id="sub-member">$0</td>
                             </tr>
                         </tbody>
+                        <tfoot>
+                            <tr class="total-row">
+                                <td colspan="4" class="total-label">Total</td>
+                                <td class="total-amount" id="grand-total">$0</td>
+                            </tr>
+                        </tfoot>
                     </table>
-                </section>
-                <section class="schedule-section">
-                    <h2 class="schedule-heading">April 2026 Schedule</h2>
+                    <div class="proceed-btn-wrap">
+                        <span class="qty-note" id="qty-note" aria-live="polite"></span>
+                        <button class="buy-now-btn proceed-btn" id="proceed-btn" onclick="openCheckoutForm()">Proceed to Checkout</button>
+                    </div>
 
-                    <div class="calendar">
-                        <div class="cal-header">
-                            <span>Sun</span><span>Mon</span><span>Tue</span>
-                            <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
-                        </div>
-                        <div class="cal-grid">
-                            <div class="cal-day empty"></div>
-                            <div class="cal-day empty"></div>
-                            <div class="cal-day empty"></div>
-                            <div class="cal-day"><span class="cal-num">1</span></div>
-                            <div class="cal-day"><span class="cal-num">2</span></div>
-                            <div class="cal-day"><span class="cal-num">3</span></div>
-                            <div class="cal-day"><span class="cal-num">4</span></div>
-                            <div class="cal-day"><span class="cal-num">5</span></div>
-                            <div class="cal-day"><span class="cal-num">6</span></div>
-                            <div class="cal-day"><span class="cal-num">7</span></div>
-                            <div class="cal-day event available">
-                                <span class="cal-num">8</span>
-                                <span class="badge available">Available</span>
-                                <span class="cal-hours">10 AM – 6 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Wednesday, April 8')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">9</span></div>
-                            <div class="cal-day event available">
-                                <span class="cal-num">10</span>
-                                <span class="badge available">Available</span>
-                                <span class="cal-hours">10 AM – 8 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Friday, April 10')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">11</span></div>
-                            <div class="cal-day event available">
-                                <span class="cal-num">12</span>
-                                <span class="badge available">Available</span>
-                                <span class="cal-hours">11 AM – 5 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Sunday, April 12')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">13</span></div>
-                            <div class="cal-day"><span class="cal-num">14</span></div>
-                            <div class="cal-day event limited">
-                                <span class="cal-num">15</span>
-                                <span class="badge limited">Limited</span>
-                                <span class="cal-hours">10 AM – 6 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Wednesday, April 15')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">16</span></div>
-                            <div class="cal-day event available">
-                                <span class="cal-num">17</span>
-                                <span class="badge available">Available</span>
-                                <span class="cal-hours">10 AM – 8 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Friday, April 17')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">18</span></div>
-                            <div class="cal-day event sold-out">
-                                <span class="cal-num">19</span>
-                                <span class="badge sold-out">Sold Out</span>
-                                <span class="cal-hours">11 AM – 5 PM</span>
-                                <button class="buy-now-btn" disabled>Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">20</span></div>
-                            <div class="cal-day"><span class="cal-num">21</span></div>
-                            <div class="cal-day event available">
-                                <span class="cal-num">22</span>
-                                <span class="badge available">Available</span>
-                                <span class="cal-hours">10 AM – 6 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Wednesday, April 22')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">23</span></div>
-                            <div class="cal-day"><span class="cal-num">24</span></div>
-                            <div class="cal-day event limited">
-                                <span class="cal-num">25</span>
-                                <span class="badge limited">Limited</span>
-                                <span class="cal-hours">10 AM – 7 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Saturday, April 25')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">26</span></div>
-                            <div class="cal-day event available">
-                                <span class="cal-num">27</span>
-                                <span class="badge available">Available</span>
-                                <span class="cal-hours">11 AM – 5 PM</span>
-                                <button class="buy-now-btn" onclick="openForm('Monday, April 27')">Buy Now</button>
-                            </div>
-                            <div class="cal-day"><span class="cal-num">28</span></div>
-                            <div class="cal-day"><span class="cal-num">29</span></div>
-                            <div class="cal-day"><span class="cal-num">30</span></div>
-                            <div class="cal-day empty"></div>
-                            <div class="cal-day empty"></div>
-                        </div>
+                    <div class="hours-info" aria-label="Museum hours">
+                        <h2 class="schedule-heading">Museum Hours</h2>
+                        <ul class="hours-list">
+                            <li><span class="hours-day">Monday – Thursday</span><span class="hours-time">10 AM – 6 PM</span></li>
+                            <li><span class="hours-day">Friday</span><span class="hours-time">10 AM – 8 PM</span></li>
+                            <li><span class="hours-day">Saturday – Sunday</span><span class="hours-time">11 AM – 5 PM</span></li>
+                        </ul>
                     </div>
                 </section>
-                <section id="purchase-form-section" class="purchase-form-section hidden">
-                    <h2 class="form-heading">Complete Your Purchase</h2>
-                    <p class="selected-date-label">Selected date: <strong id="selected-date"></strong></p>
-                    <form class="checkout-form" onsubmit="handleSubmit(event)">
+
+                <section class="checkout-form-section hidden" id="checkout-form-section" aria-labelledby="form-heading">
+                    <h2 class="form-heading" id="form-heading">Complete Your Order</h2>
+                    <form id="checkout-form" class="checkout-form" novalidate>
+
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Full name" required>
+                            <label for="visit-date">Visit Date <span class="required-star" aria-hidden="true">*</span></label>
+                            <input
+                                type="date"
+                                id="visit-date"
+                                name="visit-date"
+                                aria-required="true"
+                                aria-describedby="date-error"
+                            >
+                            <span class="error-msg" id="date-error" role="alert" aria-live="polite"></span>
                         </div>
+
                         <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                            <label for="email">Email Address <span class="required-star" aria-hidden="true">*</span></label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="your@email.com"
+                                aria-required="true"
+                                aria-describedby="email-error"
+                            >
+                            <span class="error-msg" id="email-error" role="alert" aria-live="polite"></span>
                         </div>
+
                         <div class="form-group">
-                            <label for="ticket-type">Ticket Type</label>
-                            <select id="ticket-type" name="ticket-type" required>
-                                <option value="" disabled selected>Select a type</option>
-                                <option value="general">General — $25</option>
-                                <option value="student">Student — $10</option>
-                                <option value="member">Member — $14</option>
-                            </select>
+                            <label for="zip">Zip Code <span class="optional-label">(optional)</span></label>
+                            <input
+                                type="text"
+                                id="zip"
+                                name="zip"
+                                placeholder="15213"
+                                maxlength="5"
+                                inputmode="numeric"
+                                aria-describedby="zip-error zip-hint"
+                            >
+                            <span class="field-hint" id="zip-hint">Five digits only, if provided.</span>
+                            <span class="error-msg" id="zip-error" role="alert" aria-live="polite"></span>
                         </div>
-                        <div class="form-group">
-                            <label for="quantity">Quantity</label>
-                            <input type="number" id="quantity" name="quantity" min="1" placeholder="1" required>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="mailing-list" name="mailing-list">
+                            <label for="mailing-list">Join our mailing list for exhibition updates and member offers</label>
                         </div>
-                        <div class="form-actions">
-                            <button type="button" class="cancel-btn" onclick="closeForm()">Cancel</button>
-                            <input type="submit" value="Purchase Tickets" class="submit-btn">
-                        </div>
+
+                        <p class="required-note"><span class="required-star" aria-hidden="true">*</span> Required fields</p>
+
+                        <button type="submit" class="submit-btn place-order-btn" id="place-order-btn">Place Order</button>
                     </form>
                 </section>
+
             </div>
         </div>
         <footer>

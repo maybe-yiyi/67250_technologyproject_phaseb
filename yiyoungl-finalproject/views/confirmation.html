@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="author" content="Yiyoung Liu">
+        <meta name="keywords" content="Museum, Carnegie Mellon University, Information Systems">
+        <meta name="description" content="MonoMuse ticket order confirmation">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Order Confirmed — MonoMuse</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js" defer></script>
+    </head>
+    <body onload="addYear(); loadConfirmation()">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
+        <header>
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            <nav aria-label="Main navigation">
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+            </nav>
+            <a href="checkout.html" class="big-button">Buy Tickets</a>
+        </header>
+        <div id="main-content" role="main" class="main">
+            <div class="confirmation-layout">
+                <div class="confirmation-icon" aria-hidden="true">&#10003;</div>
+                <h1 class="confirmation-heading">Order Confirmed!</h1>
+                <p class="confirmation-subtext">Thank you for your purchase. Your tickets to MonoMuse are reserved.</p>
+
+                <div class="confirmation-card" aria-label="Order summary">
+                    <h2 class="confirmation-card-heading">Order Summary</h2>
+                    <dl class="confirmation-details">
+                        <div class="detail-row">
+                            <dt>Visit Date</dt>
+                            <dd id="conf-date">—</dd>
+                        </div>
+                        <div class="detail-row">
+                            <dt>Email</dt>
+                            <dd id="conf-email">—</dd>
+                        </div>
+                        <div class="detail-row detail-breakdown-row">
+                            <dt>Tickets</dt>
+                            <dd><ul class="breakdown-list" id="conf-breakdown"></ul></dd>
+                        </div>
+                        <div class="detail-row detail-total">
+                            <dt>Total Charged</dt>
+                            <dd id="conf-total">—</dd>
+                        </div>
+                        <div class="detail-row" id="mailing-row" style="display:none">
+                            <dt>Mailing List</dt>
+                            <dd>Subscribed</dd>
+                        </div>
+                    </dl>
+                </div>
+
+                <p class="confirmation-note">A confirmation has been sent to your email address. Please bring a valid ID if you selected a Student or Member ticket. We look forward to seeing you!</p>
+
+                <a href="../index.html" class="back-home-btn">Return to Home</a>
+            </div>
+        </div>
+        <footer>
+            <p id="copyYear"> MonoMuse. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
