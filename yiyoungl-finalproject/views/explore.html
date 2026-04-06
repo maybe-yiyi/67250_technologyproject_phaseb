@@ -23,7 +23,22 @@
                 <a href="checkout.html" class="big-button">Buy Tickets</a>
             </header>
             <main id="main-content" class="main">
-                <div class="explore-grid">
+                <div class="slideshow" role="region" aria-label="Museum photo slideshow">
+                    <div class="slideshow-track">
+                        <div class="slide active" style="background-image: url('../static/museum.jpg')"></div>
+                        <div class="slide" style="background-image: url('../static/ChromaticFractal.png')"></div>
+                        <div class="slide" style="background-image: url('../static/ConcreteSilence.png')"></div>
+                    </div>
+                    <button class="slide-btn slide-prev" aria-label="Previous image">&#8592;</button>
+                    <button class="slide-btn slide-next" aria-label="Next image">&#8594;</button>
+                    <div class="slide-dots" aria-hidden="true">
+                        <span class="dot active"></span>
+                        <span class="dot"></span>
+                        <span class="dot"></span>
+                    </div>
+                    <a class="scroll-down-btn" href="#explore-content" aria-label="Scroll to content">&#8595;</a>
+                </div>
+                <div id="explore-content" class="explore-grid">
                     <h1 id="explore-heading">About Us</h1>
                     <div class="mission-statement">
                         <h2>Mission Statement</h2>
@@ -88,8 +103,37 @@
             </footer>
         </div>
         <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
         <script src="../static/script.js"></script>
         <script>
+            $(function () {
+                var current = 0;
+                var $slides = $('.slide');
+                var $dots = $('.dot');
+                var total = $slides.length;
+
+                function goTo(n) {
+                    $slides.eq(current).removeClass('active');
+                    $dots.eq(current).removeClass('active');
+                    current = (n + total) % total;
+                    $slides.eq(current).addClass('active');
+                    $dots.eq(current).addClass('active');
+                }
+
+                $('.slide-next').on('click', function () { goTo(current + 1); });
+                $('.slide-prev').on('click', function () { goTo(current - 1); });
+
+                $(document).on('keydown', function (e) {
+                    if (e.key === 'ArrowRight') goTo(current + 1);
+                    if (e.key === 'ArrowLeft')  goTo(current - 1);
+                });
+
+                $('.scroll-down-btn').on('click', function (e) {
+                    e.preventDefault();
+                    $('html, body').animate({ scrollTop: $('#explore-content').offset().top }, 600);
+                });
+            });
+
             const map = L.map("map").setView([40.4344, -79.9425], 15);
             L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
                 maxZoom: 19,

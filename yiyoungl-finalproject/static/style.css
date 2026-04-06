@@ -470,6 +470,114 @@ footer {
   background: #A9A9FF;
 }
 
+/* Explore page slideshow */
+.slideshow {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+  background: #191931;
+}
+
+.slideshow-track {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+}
+
+.slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(53, 53, 106, 0.7);
+  border: 2px solid rgba(169, 169, 255, 0.5);
+  color: #fff;
+  font-size: 1.5rem;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.slide-btn:hover {
+  background: rgba(126, 126, 252, 0.8);
+  border-color: #A9A9FF;
+}
+
+.slide-prev { left: 20px; }
+.slide-next { right: 20px; }
+
+.slide-dots {
+  position: absolute;
+  bottom: 56px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  background: transparent;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #A9A9FF;
+}
+
+.scroll-down-btn {
+  position: absolute;
+  bottom: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(53, 53, 106, 0.7);
+  border: 2px solid rgba(169, 169, 255, 0.5);
+  color: #fff;
+  font-size: 1.4rem;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  animation: bounce 1.8s infinite;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.scroll-down-btn:hover {
+  background: rgba(126, 126, 252, 0.8);
+  border-color: #A9A9FF;
+}
+
+@keyframes bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50%       { transform: translateX(-50%) translateY(6px); }
+}
+
 /* Explore page */
 .explore-grid {
   display: grid;
