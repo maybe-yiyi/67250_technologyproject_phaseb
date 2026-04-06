@@ -86,15 +86,218 @@ footer {
   color: rgba(245,245,247,.72);
 }
 
-/* Checkout page */
-.checkout-layout {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
+/* Buy Tickets page */
+.buytickets-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
   padding: 32px 24px;
   background: transparent;
-  align-items: start;
+  max-width: 960px;
 }
+
+.section-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+/* Schedule / Calendar */
+.schedule-section {
+  background: transparent;
+}
+
+.schedule-heading {
+  font-size: 20pt;
+  font-weight: 300;
+  margin-bottom: 16px;
+  background: transparent;
+}
+
+.calendar {
+  background: transparent;
+}
+
+.cal-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #191931;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.cal-header span {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A9A9FF;
+  background: #191931;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid rgba(169, 169, 255, 0.15);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.cal-day {
+  min-height: 100px;
+  padding: 10px 8px;
+  border-right: 1px solid rgba(169, 169, 255, 0.1);
+  border-bottom: 1px solid rgba(169, 169, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+}
+
+.cal-day:nth-child(7n) {
+  border-right: none;
+}
+
+.cal-day.empty {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.cal-day.event.available {
+  background: rgba(80, 200, 120, 0.06);
+}
+
+.cal-day.event.limited {
+  background: rgba(255, 190, 70, 0.06);
+}
+
+.cal-day.event.sold-out {
+  background: rgba(255, 90, 90, 0.05);
+}
+
+.cal-num {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  background: transparent;
+}
+
+.cal-day.empty .cal-num,
+.cal-day:not(.event) .cal-num {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cal-hours {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+/* Availability badges */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  background: transparent;
+}
+
+.badge.available {
+  background: rgba(80, 200, 120, 0.2);
+  color: #7be0a0;
+  border: 1px solid rgba(80, 200, 120, 0.35);
+}
+
+.badge.limited {
+  background: rgba(255, 190, 70, 0.2);
+  color: #ffd47e;
+  border: 1px solid rgba(255, 190, 70, 0.35);
+}
+
+.badge.sold-out {
+  background: rgba(255, 90, 90, 0.15);
+  color: #ff8a8a;
+  border: 1px solid rgba(255, 90, 90, 0.3);
+}
+
+/* Buy Now button */
+.buy-now-btn {
+  background: #7E7EFC;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 8px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  margin-top: auto;
+}
+
+.buy-now-btn:hover:not(:disabled) {
+  background: #A9A9FF;
+}
+
+.buy-now-btn:disabled {
+  background: rgba(126, 126, 252, 0.3);
+  color: rgba(255, 255, 255, 0.35);
+  cursor: not-allowed;
+}
+
+/* Purchase form */
+.purchase-form-section {
+  background: rgba(25, 25, 49, 0.7);
+  border: 1px solid rgba(169, 169, 255, 0.25);
+  border-radius: 12px;
+  padding: 28px;
+  transition: opacity 0.3s ease;
+}
+
+.purchase-form-section.hidden {
+  display: none;
+}
+
+.selected-date-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+.selected-date-label strong {
+  color: #A9A9FF;
+  background: transparent;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: transparent;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(169, 169, 255, 0.35);
+  border-radius: 8px;
+  padding: 11px 20px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cancel-btn:hover {
+  border-color: #A9A9FF;
+  color: #fff;
+}
+
 
 .checkout-heading {
   font-size: 36pt;
@@ -167,13 +370,6 @@ footer {
 }
 
 /* Checkout form */
-.form-section {
-  background: rgba(25, 25, 49, 0.6);
-  border: 1px solid rgba(169, 169, 255, 0.2);
-  border-radius: 12px;
-  padding: 28px;
-}
-
 .checkout-form {
   display: flex;
   flex-direction: column;

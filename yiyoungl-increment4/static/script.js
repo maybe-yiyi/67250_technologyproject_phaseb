@@ -71,3 +71,19 @@ function activeNavigation() {
 document.addEventListener("DOMContentLoaded", () => {
     activeNavigation();
 });
+
+function openForm(date) {
+    document.getElementById("selected-date").textContent = date;
+    var formSection = document.getElementById("purchase-form-section");
+    formSection.classList.remove("hidden");
+    formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+function closeForm() {
+    document.getElementById("purchase-form-section").classList.add("hidden");
+}
+
+function handleSubmit(event) {
+    event.preventDefault();
+    alert("Redirecting to payment system.");
+}
