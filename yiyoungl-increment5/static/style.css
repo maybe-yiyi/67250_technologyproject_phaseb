@@ -482,6 +482,38 @@ footer {
   background: transparent;
 }
 
+/* Explore page map */
+.map-section {
+  padding: 10px;
+  background: transparent;
+}
+
+.map-section h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  background: transparent;
+  margin-bottom: 12px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border: 2px solid #7E7EFC;
+  border-radius: 8px;
+}
+
+/* Leaflet overrides — reset global * styles that break tile layout */
+.leaflet-container * {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: #333;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  padding: 2px 5px;
+}
+
 /* Exhibitions page */
 .exhibitions-grid {
   display: grid;

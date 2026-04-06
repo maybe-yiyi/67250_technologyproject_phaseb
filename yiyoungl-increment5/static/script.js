@@ -68,9 +68,8 @@ function activeNavigation() {
     });
 }
 
-document.addEventListener("DOMContentLoaded", () => {
-    activeNavigation();
-});
+activeNavigation();
+
 
 function openForm(date) {
     document.getElementById("selected-date").textContent = date;
