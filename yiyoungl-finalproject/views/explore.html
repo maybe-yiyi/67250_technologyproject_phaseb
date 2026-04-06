@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta name="author" content="Yiyoung Liu">
         <meta name="keywords" content="Museum, Carnegie Mellon University,
@@ -11,17 +11,18 @@
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
     </head>
     <body onload="addYear()">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <div class="container">
             <header class="header">
                 <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
-                <nav>
+                <nav aria-label="Main navigation">
                     <a href="../index.html">Home</a>
                     <a href="explore.html">Explore</a>
                     <a href="exhibitions.html">Exhibitions</a>
                 </nav>
                 <a href="checkout.html" class="big-button">Buy Tickets</a>
             </header>
-            <main class="main">
+            <main id="main-content" class="main">
                 <div class="explore-grid">
                     <h1 id="explore-heading">About Us</h1>
                     <div class="mission-statement">

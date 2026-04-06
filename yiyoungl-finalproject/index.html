@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta name="author" content="Yiyoung Liu">
         <meta name="keywords" content="Museum, Carnegie Mellon University,
@@ -14,17 +14,18 @@
         <script src="./static/script.js" defer></script>
     </head>
     <body onload="addYear()">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <div class="container">
             <header class="header">
                 <img id="logo" src="./static/monomuselogo.png" alt="MonoMuse Museum Logo">
-                <nav>
+                <nav aria-label="Main navigation">
                     <a href="index.html">Home</a>
                     <a href="views/explore.html">Explore</a>
                     <a href="views/exhibitions.html">Exhibitions</a>
                 </nav>
                 <a href="views/checkout.html" class="big-button">Buy Tickets</a>
             </header>
-            <main class="main">
+            <main id="main-content" class="main">
                 <h2 id="greeting">, Welcome to MonoMuse!</h2>
                 <p>
                     The Monomuse stands as a breathtaking intersection of raw

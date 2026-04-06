@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta name="author" content="Yiyoung Liu">
         <meta name="keywords" content="Museum, Carnegie Mellon University,
@@ -11,16 +11,17 @@
         <script src="../static/script.js" defer></script>
     </head>
     <body onload="addYear()">
+        <a href="#main-content" class="skip-link">Skip to main content</a>
         <header>
             <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
-            <nav>
+            <nav aria-label="Main navigation">
                 <a href="../index.html">Home</a>
                 <a href="explore.html">Explore</a>
                 <a href="exhibitions.html">Exhibitions</a>
             </nav>
             <a href="checkout.html" class="big-button">Buy Tickets</a>
         </header>
-        <div class="main">
+        <div id="main-content" role="main" class="main">
             <div class="buytickets-layout">
                 <section class="pricing-section">
                     <h1 class="checkout-heading">Buy Tickets</h1>

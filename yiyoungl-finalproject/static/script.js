@@ -64,6 +64,7 @@ function activeNavigation() {
     navLinks.forEach(link => {
         if (window.location.href === link.href) {
             link.classList.add("active");
+            link.setAttribute("aria-current", "page");
         }
     });
 }
@@ -71,15 +72,29 @@ function activeNavigation() {
 activeNavigation();
 
 
+var lastFocusedButton = null;
+
 function openForm(date) {
+    lastFocusedButton = document.activeElement;
     document.getElementById("selected-date").textContent = date;
     var formSection = document.getElementById("purchase-form-section");
     formSection.classList.remove("hidden");
     formSection.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(function() {
+        var heading = formSection.querySelector(".form-heading");
+        if (heading) {
+            heading.setAttribute("tabindex", "-1");
+            heading.focus();
+        }
+    }, 300);
 }
 
 function closeForm() {
     document.getElementById("purchase-form-section").classList.add("hidden");
+    if (lastFocusedButton) {
+        lastFocusedButton.focus();
+        lastFocusedButton = null;
+    }
 }
 
 function handleSubmit(event) {

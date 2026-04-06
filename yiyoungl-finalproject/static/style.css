@@ -1,3 +1,32 @@
+/* Skip navigation link */
+.skip-link {
+  position: absolute;
+  top: -120px;
+  left: 0;
+  background: #7E7EFC;
+  color: #fff;
+  padding: 12px 20px;
+  z-index: 1000;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transition: top 0.15s;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* Global focus styles for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+[tabindex]:focus-visible {
+  outline: 3px solid #A9A9FF;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
 * {
   padding: 5px;
   margin: 5px;
@@ -58,6 +87,12 @@ nav {
 
 header a:hover {
   border-color: #4d5c3b;
+}
+
+header a:focus,
+header a:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
 }
 
 .active {
@@ -399,8 +434,8 @@ footer {
   padding: 10px 14px;
   color: #fff;
   font-size: 0.95rem;
-  outline: none;
-  transition: border-color 0.2s;
+  outline: 2px solid transparent;
+  transition: border-color 0.2s, outline-color 0.2s;
 }
 
 .form-group input::placeholder {
@@ -410,6 +445,7 @@ footer {
 .form-group input:focus,
 .form-group select:focus {
   border-color: #7E7EFC;
+  outline-color: #A9A9FF;
 }
 
 .form-group select option {
