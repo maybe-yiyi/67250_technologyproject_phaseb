@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="Yiyoung Liu">
+        <meta name="keywords" content="Museum, Carnegie Mellon University,
+                                       Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
+    </head>
+    <body onload="addYear()">
+        <div class="container">
+            <header class="header">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="exhibitions.html">Exhibitions</a>
+                </nav>
+                <a href="checkout.html" class="big-button">Buy Tickets</a>
+            </header>
+            <main class="main">
+                <div class="explore-grid">
+                    <h1 id="explore-heading">About Us</h1>
+                    <div class="mission-statement">
+                        <h2>Mission Statement</h2>
+                        <p>
+                            To ignite curiosity and foster deep contemplation by
+                            championing the singular power of the individual artist.
+                            Monomuse provides a minimalist sanctuary where the boundaries
+                            between architecture, modern art, and the public dissolve,
+                            creating a space for bold, unfiltered expression that
+                            challenges the status quo.
+                        </p>
+                    </div>
+                    <div class="patrons">
+                        <h2>Patrons</h2>
+                        <p>
+                            Founded in 2018, Monomuse serves a diverse urban community and
+                            a global audience of creative thinkers. Specifically, it acts
+                            as a hub for:
+                        </p>
+                        <ul>
+                            <li>Contemporary Visionaries: Local and international
+                                artists seeking a "blank canvas" architectural backdrop
+                                for experimental works.</li>
+                            <li>The Urban Public: City dwellers and families looking
+                                for an accessible, inspiring retreat from the
+                                metropolitan rush.</li>
+                            <li>Design Students & Scholars: A living laboratory for
+                                those studying the intersection of brutalist
+                                architecture and functional modern design.</li>
+                        </ul>
+                    </div>
+                    <div class="milestones">
+                        <h2>Milestones</h2>
+                        <ul>
+                            <li>2016 - Groundbreaking: Construction begins on the
+                                "Glass & Granite" initiative in the city's revitalized
+                                Arts District.</li>
+                            <li>2018 - Grand Opening: The museum opens with the
+                                "Mono-Logic" exhibition, featuring 12 site-specific
+                                installations.</li>
+                            <li>2020 - Digital Pivot: Launch of the Monomuse Virtual
+                                Wing, a 3D-mapped digital twin of the museum for global
+                                accessibility.</li>
+                            <li>2022 - Architectural Award: Recipient of the
+                                Pritzker-adjacent "Urban Harmony" Medal for its seamless
+                                integration of public plazas and private galleries.</li>
+                            <li>2024 - Expansion: Completion of the "Sky Gallery," a
+                                rooftop sculpture garden overlooking the city skyline.</li>
+                            <li>2026 - The Decadal Initiative: Announcement of a 10-year
+                                plan to become the first carbon-neutral major art museum
+                                in the region.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="map-section">
+                    <h2>Find Us</h2>
+                    <div id="map"></div>
+                </div>
+            </main>
+            <footer class="footer">
+                <p id="copyYear"> MonoMuse. All Rights Reserved.</p>
+            </footer>
+        </div>
+        <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+        <script src="../static/script.js"></script>
+        <script>
+            const map = L.map("map").setView([40.4344, -79.9425], 15);
+            L.tileLayer("https://tile.openstreetmap.org/{z}/{x}/{y}.png", {
+                maxZoom: 19,
+                attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+            }).addTo(map);
+            L.marker([40.4344, -79.9425])
+                .addTo(map)
+                .bindPopup("MonoMuse — Schenley Park, Pittsburgh")
+                .openPopup();
+        </script>
+    </body>
+</html>

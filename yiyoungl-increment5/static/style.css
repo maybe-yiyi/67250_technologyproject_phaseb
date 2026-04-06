@@ -1,0 +1,621 @@
+* {
+  padding: 5px;
+  margin: 5px;
+  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  line-height: 1.5;
+  font-style: normal;
+  background: #35356A;
+  color: #FFFFFF;
+}
+
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'main main'
+    'footer footer';
+}
+
+.header {
+  grid-area: header;
+}
+
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid #191931;
+}
+
+#logo {
+  width: 18%;
+  display: block;
+}
+
+header a {
+  text-decoration: none;
+  color: #000000;
+  font-weight: 400;
+  padding: 8px 10px;
+  border: 1px solid transparent;
+  border-radius: 15px;
+  background: #A9A9FF;
+}
+
+nav {
+  display: flex;
+  flex-direciton: row;
+  justify-content: space-between;
+  gap: 10px 30px;
+}
+
+.big-button {
+  padding: 16px 20px;
+}
+
+header a:hover {
+  border-color: #4d5c3b;
+}
+
+.active {
+  background: #7E7EFC;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  /* min-height: 100vh; */
+}
+
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
+footer {
+  margin-top: auto;
+  border-top: 1px solid rgba(245,245,247,.12);
+  padding: 18px 16px;
+  text-align: center;
+  color: rgba(245,245,247,.72);
+}
+
+/* Buy Tickets page */
+.buytickets-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 32px 24px;
+  background: transparent;
+  max-width: 960px;
+}
+
+.section-subtitle {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+/* Schedule / Calendar */
+.schedule-section {
+  background: transparent;
+}
+
+.schedule-heading {
+  font-size: 20pt;
+  font-weight: 300;
+  margin-bottom: 16px;
+  background: transparent;
+}
+
+.calendar {
+  background: transparent;
+}
+
+.cal-header {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #191931;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+
+.cal-header span {
+  padding: 10px 0;
+  text-align: center;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #A9A9FF;
+  background: #191931;
+}
+
+.cal-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  border: 1px solid rgba(169, 169, 255, 0.15);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  background: transparent;
+}
+
+.cal-day {
+  min-height: 100px;
+  padding: 10px 8px;
+  border-right: 1px solid rgba(169, 169, 255, 0.1);
+  border-bottom: 1px solid rgba(169, 169, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  background: transparent;
+}
+
+.cal-day:nth-child(7n) {
+  border-right: none;
+}
+
+.cal-day.empty {
+  background: rgba(0, 0, 0, 0.15);
+}
+
+.cal-day.event.available {
+  background: rgba(80, 200, 120, 0.06);
+}
+
+.cal-day.event.limited {
+  background: rgba(255, 190, 70, 0.06);
+}
+
+.cal-day.event.sold-out {
+  background: rgba(255, 90, 90, 0.05);
+}
+
+.cal-num {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  background: transparent;
+}
+
+.cal-day.empty .cal-num,
+.cal-day:not(.event) .cal-num {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.cal-hours {
+  font-size: 0.7rem;
+  color: rgba(255, 255, 255, 0.5);
+  background: transparent;
+}
+
+/* Availability badges */
+.badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+  font-weight: 400;
+  background: transparent;
+}
+
+.badge.available {
+  background: rgba(80, 200, 120, 0.2);
+  color: #7be0a0;
+  border: 1px solid rgba(80, 200, 120, 0.35);
+}
+
+.badge.limited {
+  background: rgba(255, 190, 70, 0.2);
+  color: #ffd47e;
+  border: 1px solid rgba(255, 190, 70, 0.35);
+}
+
+.badge.sold-out {
+  background: rgba(255, 90, 90, 0.15);
+  color: #ff8a8a;
+  border: 1px solid rgba(255, 90, 90, 0.3);
+}
+
+/* Buy Now button */
+.buy-now-btn {
+  background: #7E7EFC;
+  border: none;
+  border-radius: 6px;
+  padding: 5px 8px;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: background 0.2s;
+  white-space: nowrap;
+  margin-top: auto;
+}
+
+.buy-now-btn:hover:not(:disabled) {
+  background: #A9A9FF;
+}
+
+.buy-now-btn:disabled {
+  background: rgba(126, 126, 252, 0.3);
+  color: rgba(255, 255, 255, 0.35);
+  cursor: not-allowed;
+}
+
+/* Purchase form */
+.purchase-form-section {
+  background: rgba(25, 25, 49, 0.7);
+  border: 1px solid rgba(169, 169, 255, 0.25);
+  border-radius: 12px;
+  padding: 28px;
+  transition: opacity 0.3s ease;
+}
+
+.purchase-form-section.hidden {
+  display: none;
+}
+
+.selected-date-label {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+.selected-date-label strong {
+  color: #A9A9FF;
+  background: transparent;
+}
+
+.form-actions {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  background: transparent;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: 1px solid rgba(169, 169, 255, 0.35);
+  border-radius: 8px;
+  padding: 11px 20px;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.cancel-btn:hover {
+  border-color: #A9A9FF;
+  color: #fff;
+}
+
+
+.checkout-heading {
+  font-size: 36pt;
+  font-weight: 300;
+  margin-bottom: 24px;
+  background: transparent;
+}
+
+.form-heading {
+  font-size: 20pt;
+  font-weight: 300;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+/* Ticket table */
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.ticket-table thead tr {
+  background: #191931;
+}
+
+.ticket-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #191931;
+  color: #A9A9FF;
+}
+
+.ticket-table td {
+  padding: 16px;
+  background: transparent;
+  border-bottom: 1px solid rgba(169, 169, 255, 0.15);
+  vertical-align: middle;
+}
+
+.ticket-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ticket-table tbody tr:hover td {
+  background: rgba(169, 169, 255, 0.08);
+}
+
+.ticket-type {
+  font-weight: 400;
+  background: transparent;
+}
+
+.ticket-price {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #A9A9FF;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.ticket-details {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  background: transparent;
+}
+
+/* Checkout form */
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: transparent;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+}
+
+.form-group input,
+.form-group select {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(169, 169, 255, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #7E7EFC;
+}
+
+.form-group select option {
+  background: #35356A;
+  color: #fff;
+}
+
+.submit-btn {
+  background: #7E7EFC;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #A9A9FF;
+}
+
+/* Explore page */
+.explore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+  padding: 10px;
+}
+
+#explore-heading {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  font-size: 48pt;
+  font-weight: 300;
+  background: transparent;
+}
+
+.mission-statement {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  background: transparent;
+}
+
+.patrons {
+  grid-column: 1;
+  grid-row: 3;
+  background: transparent;
+}
+
+.milestones {
+  grid-column: 2;
+  grid-row: 3;
+  background: transparent;
+}
+
+.explore-grid h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  background: transparent;
+}
+
+.explore-grid p,
+.explore-grid li {
+  font-size: 0.9rem;
+  text-align: justify;
+  background: transparent;
+}
+
+/* Explore page map */
+.map-section {
+  padding: 10px;
+  background: transparent;
+}
+
+.map-section h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  background: transparent;
+  margin-bottom: 12px;
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  border: 2px solid #7E7EFC;
+  border-radius: 8px;
+}
+
+/* Leaflet overrides — reset global * styles that break tile layout */
+.leaflet-container * {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  color: #333;
+}
+
+.leaflet-container .leaflet-control-attribution {
+  padding: 2px 5px;
+}
+
+/* Exhibitions page */
+.exhibitions-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  gap: 16px;
+  padding: 10px;
+}
+
+#exhibitions-heading {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  font-size: 48pt;
+  font-weight: 300;
+  background: transparent;
+}
+
+.ex1-img {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.ex1-text {
+  grid-column: 3 / 5;
+  grid-row: 2;
+}
+
+.ex2-title {
+  grid-column: 1;
+  grid-row: 3;
+  font-size: 24pt;
+  font-weight: 400;
+  background: transparent;
+}
+
+.ex2-desc {
+  grid-column: 1;
+  grid-row: 4;
+  font-size: 0.9rem;
+  background: transparent;
+  text-align: justify;
+}
+
+.ex2-label-daylight {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.ex2-desc-daylight {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.ex2-label-night {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.ex2-desc-night {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+.ex2-img {
+  grid-column: 4;
+  grid-row: 3 / 5;
+}
+
+.exhibition-img {
+  background: #888;
+  min-height: 180px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 3px solid #7E7EFC;
+  display: block;
+}
+
+.exhibition-text h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  margin-bottom: 8px;
+  background: transparent;
+}
+
+.exhibition-text p {
+  font-size: 0.9rem;
+  background: transparent;
+  text-align: justify;
+}
+
+.time-label {
+  font-weight: 400;
+  white-space: nowrap;
+  background: transparent;
+  text-align: right;
+}
+
+.time-desc {
+  font-size: 0.9rem;
+  background: transparent;
+  text-align: justify;
+}
