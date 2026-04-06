@@ -10,56 +10,53 @@
         <script src="../static/script.js" defer></script>
     </head>
     <body onload="addYear()">
-        <header>
-            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
-            <nav>
-                <a href="../index.html">Home</a>
-                <a href="explore.html">Explore</a>
-                <a href="exhibitions.html">Exhibitions</a>
-            </nav>
-            <a href="checkout.html" class="big-button">Buy Tickets</a>
-        </header>
-        <div class="main">
-            <div class="exhibition-1">
-                <h3>
-                    Exhibition 1 - Concrete Silence: The Architecture of Stillness
-                </h3>
-                <p>
-                    This immersive exhibition transforms the Grand Atrium into
-                    a sensory exploration of "Brutalist Zen." Curated by
-                    world-renowned architect Elena Voss, the show features
-                    large-scale, monochromatic slabs of raw concrete suspended
-                    mid-air, creating a labyrinth of shadows. Instead of
-                    traditional placards, the exhibition utilizes directional
-                    audio, where whispers of architectural history and ambient
-                    field recordings from construction sites play only when a
-                    visitor stands in specific "zones of stillness." It challenges
-                    the viewer to find beauty in the heavy, the cold, and the unyielding.
-                </p>
-            </div>
-            <div class="exhibition-2">
-                <h3>
-                    Exhibition 2 - Chromatic Fractals: Light as a Sculptural Medium
-                </h3>
-                <p>
-                    Located in the Sky Gallery, this vibrant exhibition features
-                    the work of digital artist Aris Thorne. Utilizing the museum’s
-                    unique floor-to-ceiling glass, Thorne has installed a series
-                    of dichroic glass prisms and programmed LED arrays that
-                    react to the sun's position throughout the day.
-                </p>
-                <ul>
-                    <li>During Daylight: The gallery is flooded with shifting
-                        rainbows that track the movement of the earth.</li>
-                    <li>At Night: The installation reverses, projecting intricate
-                        geometric light patterns onto the city’s surrounding
-                        streets, effectively turning the museum building into a
-                        glowing urban lantern.</li>
-                </ul>
-            </div>
+        <div class="container">
+            <header class="header">
+                <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+                <nav>
+                    <a href="../index.html">Home</a>
+                    <a href="explore.html">Explore</a>
+                    <a href="exhibitions.html">Exhibitions</a>
+                </nav>
+                <a href="checkout.html" class="big-button">Buy Tickets</a>
+            </header>
+            <main class="main">
+                <div class="exhibitions-grid">
+                    <h1 id="exhibitions-heading">Featured Exhibitions</h1>
+                    <img class="ex1-img exhibition-img" src="../static/ConcreteSilence.png" alt="Concrete Silence">
+                    <div class="ex1-text exhibition-text">
+                        <h2>Concrete Silence: The Architecture of Stillness</h2>
+                        <p>
+                            This immersive exhibition transforms the Grand Atrium into
+                            a sensory exploration of "Brutalist Zen." Curated by
+                            world-renowned architect Elena Voss, the show features
+                            large-scale, monochromatic slabs of raw concrete suspended
+                            mid-air, creating a labyrinth of shadows. Instead of
+                            traditional placards, the exhibition utilizes directional
+                            audio, where whispers of architectural history and ambient
+                            field recordings from construction sites play only when a
+                            visitor stands in specific "zones of stillness." It challenges
+                            the viewer to find beauty in the heavy, the cold, and the unyielding.
+                        </p>
+                    </div>
+                    <h2 class="ex2-title">Chromatic Fractals: Light as a Sculptural Medium</h2>
+                    <p class="ex2-desc">
+                        Located in the Sky Gallery, this vibrant exhibition features
+                        the work of digital artist Aris Thorne. Utilizing the museum’s
+                        unique floor-to-ceiling glass, Thorne has installed a series
+                        of dichroic glass prisms and programmed LED arrays that
+                        react to the sun’s position throughout the day.
+                    </p>
+                    <div class="ex2-label-daylight time-label">During Daylight</div>
+                    <div class="ex2-desc-daylight time-desc">The gallery is flooded with shifting rainbows that track the movement of the earth.</div>
+                    <div class="ex2-label-night time-label">At Night</div>
+                    <div class="ex2-desc-night time-desc">The installation reverses, projecting intricate geometric light patterns onto the city’s surrounding streets, effectively turning the museum building into a glowing urban lantern.</div>
+                    <img class="ex2-img exhibition-img" src="../static/ChromaticFractal.png" alt="Chromatic Fractal">
+                </div>
+            </main>
+            <footer class="footer">
+                <p id="copyYear"> MonoMuse. All Rights Reserved.</p>
+            </footer>
         </div>
-        <footer>
-            <p id="copyYear"> MonoMuse. All Rights Reserved.</p>
-        </footer>
     </body>
 </html>

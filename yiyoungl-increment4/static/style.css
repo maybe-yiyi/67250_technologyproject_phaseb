@@ -10,6 +10,18 @@
   color: #FFFFFF;
 }
 
+.container {
+  display: grid;
+  grid-template-areas:
+    'header header'
+    'main main'
+    'footer footer';
+}
+
+.header {
+  grid-area: header;
+}
+
 header {
   display: flex;
   flex-direction: row;
@@ -58,6 +70,14 @@ body {
   /* min-height: 100vh; */
 }
 
+.main {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+}
+
 footer {
   margin-top: auto;
   border-top: 1px solid rgba(245,245,247,.12);
@@ -80,4 +100,110 @@ table tr:nth-child(even) td {
 form * {
   margin: auto;
   text-align: center;
+}
+
+/* Exhibitions page */
+.exhibitions-grid {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  gap: 16px;
+  padding: 10px;
+}
+
+#exhibitions-heading {
+  grid-column: 1 / 5;
+  grid-row: 1;
+  font-size: 48pt;
+  font-weight: 300;
+  background: transparent;
+}
+
+.ex1-img {
+  grid-column: 1 / 3;
+  grid-row: 2;
+}
+
+.ex1-text {
+  grid-column: 3 / 5;
+  grid-row: 2;
+}
+
+.ex2-title {
+  grid-column: 1;
+  grid-row: 3;
+  font-size: 24pt;
+  font-weight: 400;
+  background: transparent;
+}
+
+.ex2-desc {
+  grid-column: 1;
+  grid-row: 4;
+  font-size: 0.9rem;
+  background: transparent;
+  text-align: justify;
+}
+
+.ex2-label-daylight {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.ex2-desc-daylight {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.ex2-label-night {
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.ex2-desc-night {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+.ex2-img {
+  grid-column: 4;
+  grid-row: 3 / 5;
+}
+
+.exhibition-img {
+  background: #888;
+  min-height: 180px;
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 3px solid #7E7EFC;
+  display: block;
+}
+
+.exhibition-text h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  margin-bottom: 8px;
+  background: transparent;
+}
+
+.exhibition-text p {
+  font-size: 0.9rem;
+  background: transparent;
+  text-align: justify;
+}
+
+.time-label {
+  font-weight: 400;
+  white-space: nowrap;
+  background: transparent;
+  text-align: right;
+}
+
+.time-desc {
+  font-size: 0.9rem;
+  background: transparent;
+  text-align: justify;
 }
