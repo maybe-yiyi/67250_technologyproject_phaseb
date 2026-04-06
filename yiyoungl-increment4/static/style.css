@@ -86,20 +86,156 @@ footer {
   color: rgba(245,245,247,.72);
 }
 
-th {
-  padding-top: 12px;
-  padding-bottom: 12px;
-  width: fit-content;
+/* Checkout page */
+.checkout-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding: 32px 24px;
+  background: transparent;
+  align-items: start;
 }
 
-table tr:nth-child(even) td {
-  background-color: #c2c2c2;
-  color: #000000;
+.checkout-heading {
+  font-size: 36pt;
+  font-weight: 300;
+  margin-bottom: 24px;
+  background: transparent;
 }
 
-form * {
-  margin: auto;
-  text-align: center;
+.form-heading {
+  font-size: 20pt;
+  font-weight: 300;
+  margin-bottom: 20px;
+  background: transparent;
+}
+
+/* Ticket table */
+.ticket-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: transparent;
+}
+
+.ticket-table thead tr {
+  background: #191931;
+}
+
+.ticket-table th {
+  padding: 14px 16px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 0.85rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: #191931;
+  color: #A9A9FF;
+}
+
+.ticket-table td {
+  padding: 16px;
+  background: transparent;
+  border-bottom: 1px solid rgba(169, 169, 255, 0.15);
+  vertical-align: middle;
+}
+
+.ticket-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.ticket-table tbody tr:hover td {
+  background: rgba(169, 169, 255, 0.08);
+}
+
+.ticket-type {
+  font-weight: 400;
+  background: transparent;
+}
+
+.ticket-price {
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #A9A9FF;
+  background: transparent;
+  white-space: nowrap;
+}
+
+.ticket-details {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.65);
+  background: transparent;
+}
+
+/* Checkout form */
+.form-section {
+  background: rgba(25, 25, 49, 0.6);
+  border: 1px solid rgba(169, 169, 255, 0.2);
+  border-radius: 12px;
+  padding: 28px;
+}
+
+.checkout-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  background: transparent;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: transparent;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.75);
+  background: transparent;
+}
+
+.form-group input,
+.form-group select {
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(169, 169, 255, 0.3);
+  border-radius: 8px;
+  padding: 10px 14px;
+  color: #fff;
+  font-size: 0.95rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.form-group input:focus,
+.form-group select:focus {
+  border-color: #7E7EFC;
+}
+
+.form-group select option {
+  background: #35356A;
+  color: #fff;
+}
+
+.submit-btn {
+  background: #7E7EFC;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 20px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  cursor: pointer;
+  margin-top: 6px;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #A9A9FF;
 }
 
 /* Explore page */
