@@ -48,8 +48,8 @@ header a:hover {
   border-color: #4d5c3b;
 }
 
-#navselected {
-  color: #92ad70;
+.active {
+  background: #7E7EFC;
 }
 
 body {

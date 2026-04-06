@@ -52,8 +52,22 @@ function greeting(x) {
     }
     document.getElementById("greeting").innerHTML = str + document.getElementById("greeting").innerHTML;
 }
-greeting(hour);
+if (document.getElementById("greeting")) greeting(hour);
 
 function addYear() {
     document.getElementById("copyYear").innerHTML = "&copy; " + now.getFullYear() + document.getElementById("copyYear").innerHTML;
 }
+
+function activeNavigation() {
+    const navLinks = document.querySelectorAll('header a');
+
+    navLinks.forEach(link => {
+        if (window.location.href === link.href) {
+            link.classList.add("active");
+        }
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    activeNavigation();
+});
