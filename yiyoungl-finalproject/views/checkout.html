@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="author" content="Yiyoung Liu">
+        <meta name="keywords" content="Museum, Carnegie Mellon University,
+                                       Information Systems">
+        <meta name="description" content="MonoMuse website redesign project">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MonoMuse</title>
+        <link rel="stylesheet" href="../static/style.css">
+        <script src="../static/script.js" defer></script>
+    </head>
+    <body onload="addYear()">
+        <header>
+            <img id="logo" src="../static/monomuselogo.png" alt="MonoMuse Museum Logo">
+            <nav>
+                <a href="../index.html">Home</a>
+                <a href="explore.html">Explore</a>
+                <a href="exhibitions.html">Exhibitions</a>
+            </nav>
+            <a href="checkout.html" class="big-button">Buy Tickets</a>
+        </header>
+        <div class="main">
+            <div class="buytickets-layout">
+                <section class="pricing-section">
+                    <h1 class="checkout-heading">Buy Tickets</h1>
+                    <p class="section-subtitle">Select a date below to begin your purchase.</p>
+                    <table class="ticket-table">
+                        <thead>
+                            <tr>
+                                <th>Type</th>
+                                <th>Price</th>
+                                <th>Details</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><span class="ticket-type">General</span></td>
+                                <td><span class="ticket-price">$25</span></td>
+                                <td class="ticket-details">Standard access for adults (ages 18–64)</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ticket-type">Student</span></td>
+                                <td><span class="ticket-price">$10</span></td>
+                                <td class="ticket-details">Student ID required</td>
+                            </tr>
+                            <tr>
+                                <td><span class="ticket-type">Member</span></td>
+                                <td><span class="ticket-price">$14</span></td>
+                                <td class="ticket-details">Member ID required</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+                <section class="schedule-section">
+                    <h2 class="schedule-heading">April 2026 Schedule</h2>
+
+                    <div class="calendar">
+                        <div class="cal-header">
+                            <span>Sun</span><span>Mon</span><span>Tue</span>
+                            <span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+                        </div>
+                        <div class="cal-grid">
+                            <div class="cal-day empty"></div>
+                            <div class="cal-day empty"></div>
+                            <div class="cal-day empty"></div>
+                            <div class="cal-day"><span class="cal-num">1</span></div>
+                            <div class="cal-day"><span class="cal-num">2</span></div>
+                            <div class="cal-day"><span class="cal-num">3</span></div>
+                            <div class="cal-day"><span class="cal-num">4</span></div>
+                            <div class="cal-day"><span class="cal-num">5</span></div>
+                            <div class="cal-day"><span class="cal-num">6</span></div>
+                            <div class="cal-day"><span class="cal-num">7</span></div>
+                            <div class="cal-day event available">
+                                <span class="cal-num">8</span>
+                                <span class="badge available">Available</span>
+                                <span class="cal-hours">10 AM – 6 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Wednesday, April 8')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">9</span></div>
+                            <div class="cal-day event available">
+                                <span class="cal-num">10</span>
+                                <span class="badge available">Available</span>
+                                <span class="cal-hours">10 AM – 8 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Friday, April 10')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">11</span></div>
+                            <div class="cal-day event available">
+                                <span class="cal-num">12</span>
+                                <span class="badge available">Available</span>
+                                <span class="cal-hours">11 AM – 5 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Sunday, April 12')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">13</span></div>
+                            <div class="cal-day"><span class="cal-num">14</span></div>
+                            <div class="cal-day event limited">
+                                <span class="cal-num">15</span>
+                                <span class="badge limited">Limited</span>
+                                <span class="cal-hours">10 AM – 6 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Wednesday, April 15')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">16</span></div>
+                            <div class="cal-day event available">
+                                <span class="cal-num">17</span>
+                                <span class="badge available">Available</span>
+                                <span class="cal-hours">10 AM – 8 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Friday, April 17')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">18</span></div>
+                            <div class="cal-day event sold-out">
+                                <span class="cal-num">19</span>
+                                <span class="badge sold-out">Sold Out</span>
+                                <span class="cal-hours">11 AM – 5 PM</span>
+                                <button class="buy-now-btn" disabled>Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">20</span></div>
+                            <div class="cal-day"><span class="cal-num">21</span></div>
+                            <div class="cal-day event available">
+                                <span class="cal-num">22</span>
+                                <span class="badge available">Available</span>
+                                <span class="cal-hours">10 AM – 6 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Wednesday, April 22')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">23</span></div>
+                            <div class="cal-day"><span class="cal-num">24</span></div>
+                            <div class="cal-day event limited">
+                                <span class="cal-num">25</span>
+                                <span class="badge limited">Limited</span>
+                                <span class="cal-hours">10 AM – 7 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Saturday, April 25')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">26</span></div>
+                            <div class="cal-day event available">
+                                <span class="cal-num">27</span>
+                                <span class="badge available">Available</span>
+                                <span class="cal-hours">11 AM – 5 PM</span>
+                                <button class="buy-now-btn" onclick="openForm('Monday, April 27')">Buy Now</button>
+                            </div>
+                            <div class="cal-day"><span class="cal-num">28</span></div>
+                            <div class="cal-day"><span class="cal-num">29</span></div>
+                            <div class="cal-day"><span class="cal-num">30</span></div>
+                            <div class="cal-day empty"></div>
+                            <div class="cal-day empty"></div>
+                        </div>
+                    </div>
+                </section>
+                <section id="purchase-form-section" class="purchase-form-section hidden">
+                    <h2 class="form-heading">Complete Your Purchase</h2>
+                    <p class="selected-date-label">Selected date: <strong id="selected-date"></strong></p>
+                    <form class="checkout-form" onsubmit="handleSubmit(event)">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" name="name" placeholder="Full name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="your@email.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="ticket-type">Ticket Type</label>
+                            <select id="ticket-type" name="ticket-type" required>
+                                <option value="" disabled selected>Select a type</option>
+                                <option value="general">General — $25</option>
+                                <option value="student">Student — $10</option>
+                                <option value="member">Member — $14</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="quantity">Quantity</label>
+                            <input type="number" id="quantity" name="quantity" min="1" placeholder="1" required>
+                        </div>
+                        <div class="form-actions">
+                            <button type="button" class="cancel-btn" onclick="closeForm()">Cancel</button>
+                            <input type="submit" value="Purchase Tickets" class="submit-btn">
+                        </div>
+                    </form>
+                </section>
+            </div>
+        </div>
+        <footer>
+            <p id="copyYear"> MonoMuse. All Rights Reserved.</p>
+        </footer>
+    </body>
+</html>
