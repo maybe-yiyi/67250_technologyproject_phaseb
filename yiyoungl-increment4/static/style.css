@@ -102,6 +102,54 @@ form * {
   text-align: center;
 }
 
+/* Explore page */
+.explore-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto auto;
+  gap: 16px;
+  padding: 10px;
+}
+
+#explore-heading {
+  grid-column: 1 / 3;
+  grid-row: 1;
+  font-size: 48pt;
+  font-weight: 300;
+  background: transparent;
+}
+
+.mission-statement {
+  grid-column: 1 / 3;
+  grid-row: 2;
+  background: transparent;
+}
+
+.patrons {
+  grid-column: 1;
+  grid-row: 3;
+  background: transparent;
+}
+
+.milestones {
+  grid-column: 2;
+  grid-row: 3;
+  background: transparent;
+}
+
+.explore-grid h2 {
+  font-size: 24pt;
+  font-weight: 400;
+  background: transparent;
+}
+
+.explore-grid p,
+.explore-grid li {
+  font-size: 0.9rem;
+  text-align: justify;
+  background: transparent;
+}
+
 /* Exhibitions page */
 .exhibitions-grid {
   display: grid;
